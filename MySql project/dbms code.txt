@@ -1,0 +1,179 @@
+
+
+create table cpinf(name char(11) primary key,fullname char(15),dob date,jersey number,playing_role char(12),playing_style  char(13));
+
+Table created.
+
+SQL> insert into cpinf values('Ajit','Ajit Agarkar','04-12-1977',55,'bowling','right hand');
+
+1 row created.
+
+SQL> insert into cpinf values('Anil','Anil Kumble','17-10-1970',8,'bowling','right hand');
+
+1 row created.
+
+SQL> select * from cpinf;
+
+NAME        FULLNAME        DOB            JERSEY PLAYING_ROLE PLAYING_STYLE
+----------- --------------- ---------- ---------- ------------ -------------
+Ajit        Ajit Agarkar    04-12-1977         55 bowling      right hand
+Anil        Anil Kumble     17-10-1970          8 bowling      right hand
+
+SQL> insert into cpinf values('Bumrah','Jasprit Bumrah','06-12-1993',,'bowling','right hand');
+     insert into cpinf values('Bumrah','Jasprit Bumrah','06-12-1993',93,'bowling','right hand');
+
+1 row created.
+
+SQL> select * from cpinf;
+
+NAME        FULLNAME        DOB            JERSEY PLAYING_ROLE PLAYING_STYLE
+----------- --------------- ---------- ---------- ------------ -------------
+Ajit        Ajit Agarkar    04-12-1977         55 bowling      right hand
+Anil        Anil Kumble     17-10-1970          8 bowling      right hand
+Bumrah      Jasprit Bumrah  06-12-1993         93 bowling      right hand
+
+SQL> insert into cpinf values('Binny','Binny Stuart','03-06-1984',84,'all rounder','right hand');
+
+1 row created.
+
+SQL> select * from cpinf;
+
+NAME        FULLNAME        DOB            JERSEY PLAYING_ROLE PLAYING_STYLE
+----------- --------------- ---------- ---------- ------------ -------------
+Ajit        Ajit Agarkar    04-12-1977         55 bowling      right hand
+Anil        Anil Kumble     17-10-1970          8 bowling      right hand
+Bumrah      Jasprit Bumrah  06-12-1993         93 bowling      right hand
+Binny       Binny Stuart    03-06-1984         84 all rounder  right hand
+
+SQL> c
+
+1 row created.
+
+SQL> insert into cpinf values('Chahar','Chahar Rahul','04-08-1999',28,'bowling','right hand');
+insert into cpinf values('Chahar','Chahar Rahul','04-08-1999',28,'bowling','right hand')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (SYSTEM.SYS_C004128) violated
+
+
+SQL> insert into cpinf values('Chahar Rahul','Chahar Rahul','04-08-1999',28,'bowling','right hand');
+insert into cpinf values('Chahar Rahul','Chahar Rahul','04-08-1999',28,'bowling','right hand')
+                         *
+ERROR at line 1:
+ORA-12899: value too large for column "SYSTEM"."CPINF"."NAME" (actual: 12,
+maximum: 11)
+
+
+SQL> select * from cpinf;
+
+NAME        FULLNAME        DOB            JERSEY PLAYING_ROLE PLAYING_STYLE
+----------- --------------- ---------- ---------- ------------ -------------
+Ajit        Ajit Agarkar    04-12-1977         55 bowling      right hand
+Anil        Anil Kumble     17-10-1970          8 bowling      right hand
+Bumrah      Jasprit Bumrah  06-12-1993         93 bowling      right hand
+Binny       Binny Stuart    03-06-1984         84 all rounder  right hand
+Chahar      Chahar Deepak   17-08-1992         20 bowling      right hand
+
+SQL> insert into cpinf values('C Sakariya','Chetan Sakariya','28-02-1998',28,'bowling','left hand');
+
+1 row created.
+
+SQL> select * from cpinf;
+
+NAME        FULLNAME        DOB            JERSEY PLAYING_ROLE PLAYING_STYLE
+----------- --------------- ---------- ---------- ------------ -------------
+Ajit        Ajit Agarkar    04-12-1977         55 bowling      right hand
+Anil        Anil Kumble     17-10-1970          8 bowling      right hand
+Bumrah      Jasprit Bumrah  06-12-1993         93 bowling      right hand
+Binny       Binny Stuart    03-06-1984         84 all rounder  right hand
+Chahar      Chahar Deepak   17-08-1992         20 bowling      right hand
+C Sakariya  Chetan Sakariya 28-02-1998         28 bowling      left hand
+
+6 rows selected.
+
+SQL> insert into cpinf values('DK','Dinesh Karthik','01-06-1985',19,'All rounder','right hand');
+
+1 row created.
+
+SQL> insert into cpinf values('Dravid','Rahul Dravid','11-01-1973',19,'batting','right hand');
+
+1 row created.
+
+SQL> select * from cpinf;
+
+NAME        FULLNAME        DOB            JERSEY PLAYING_ROLE PLAYING_STYLE
+----------- --------------- ---------- ---------- ------------ -------------
+Ajit        Ajit Agarkar    04-12-1977         55 bowling      right hand
+Anil        Anil Kumble     17-10-1970          8 bowling      right hand
+Bumrah      Jasprit Bumrah  06-12-1993         93 bowling      right hand
+Binny       Binny Stuart    03-06-1984         84 all rounder  right hand
+Chahar      Chahar Deepak   17-08-1992         20 bowling      right hand
+C Sakariya  Chetan Sakariya 28-02-1998         28 bowling      left hand
+DK          Dinesh Karthik  01-06-1985         19 All rounder  right hand
+Dravid      Rahul Dravid    11-01-1973         19 batting      right hand
+
+8 rows selected.
+
+SQL> insert into cpinf values('ED Solkar','Eknath Solkar','18-03-1948',0,'All rounder','left hand');
+
+1 row created.
+
+SQL> select * from cpinf;
+
+NAME        FULLNAME        DOB            JERSEY PLAYING_ROLE PLAYING_STYLE
+----------- --------------- ---------- ---------- ------------ -------------
+Ajit        Ajit Agarkar    04-12-1977         55 bowling      right hand
+Anil        Anil Kumble     17-10-1970          8 bowling      right hand
+Bumrah      Jasprit Bumrah  06-12-1993         93 bowling      right hand
+Binny       Binny Stuart    03-06-1984         84 all rounder  right hand
+Chahar      Chahar Deepak   17-08-1992         20 bowling      right hand
+C Sakariya  Chetan Sakariya 28-02-1998         28 bowling      left hand
+DK          Dinesh Karthik  01-06-1985         19 All rounder  right hand
+Dravid      Rahul Dravid    11-01-1973         19 batting      right hand
+ED Solkar   Eknath Solkar   18-03-1948          0 All rounder  left hand
+
+9 rows selected.
+
+DATE : APRIL 10
+select * from cpinf;
+
+NAME            FULLNAME        DOB            JERSEY PLAYING_ROLE PLAYING_STYLE
+--------------- --------------- ---------- ---------- ------------ -------------
+Ajit            Ajit Agarkar    04-12-1977         55 bowling      right hand
+Bumrah          Jasprit Bumrah  06-12-1993         93 bowling      right hand
+Binny           Binny Stuart    03-06-1984         84 all rounder  right hand
+C Sakariya      Chetan Sakariya 28-02-1998         28 bowling      left hand
+R Chahar        Rahul Chahar    04-08-1999         28 bowling      right hand
+Deepak Chahar   Deepak Chahar   17-08-1992         20 bowling      right hand
+DK              Dinesh Karthik  01-06-1985         19 All rounder  right hand
+ED Solkar       Eknath Solkar   18-03-1948          0 All rounder  left hand
+Dravid          Rahul Dravid    11-01-1973         19 batting      right hand
+
+9 rows selected.
+insert into cdy values('Ajit','01-04-1998','01-12-2004','07-10-1998');
+insert into cdy values('Ajit','01-04-1998','01-12-2004','07-10-1998')
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (SYSTEM.SYS_C004136) violated - parent key not
+found
+
+
+SQL> alter table cdy modify name char(15 char);
+
+Table altered.
+
+SQL> insert into cdy values('Ajit','01-04-1998','01-12-2004','07-10-1998');
+
+1 row created.
+
+SQL> commit;
+
+Commit complete.
+
+
+
+SQL>  select cpinf.name from cpinf inner join  cdy on  cpinf.name=cdy.name where cdy.name='g';
+
+no rows selected
+
+sql>select cpinf.name from cpinf inner join  cdy on  cpinf.name=cdy.name;
